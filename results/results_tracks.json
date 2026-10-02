@@ -1,0 +1,107 @@
+{
+  "E_sinuous_roads": {
+    "params": {
+      "hough": {
+        "percentile": 91.0,
+        "threshold": 5,
+        "line_length": 5,
+        "line_gap": 3
+      },
+      "radon": {
+        "window": 16,
+        "threshold": 6.5
+      },
+      "p4unet": {
+        "threshold": 0.3
+      }
+    },
+    "straight": {
+      "hough": {
+        "f1": 0.5445653151087243,
+        "apls": 0.38784202499751624,
+        "completeness": 0.36363541347506106,
+        "correctness": 0.5595107012151246
+      },
+      "radon": {
+        "f1": 0.7140703164704163,
+        "apls": 0.5087669828413626,
+        "completeness": 0.4857579504201087,
+        "correctness": 0.6321316454659579
+      },
+      "p4unet": {
+        "f1": 0.9977650702734477,
+        "apls": 0.9518575651924707,
+        "completeness": 0.9301408697728524,
+        "correctness": 0.9890458739812577
+      }
+    },
+    "sinuous": {
+      "hough": {
+        "f1": 0.6021392165962738,
+        "apls": 0.37992970497032835,
+        "completeness": 0.32570762204064246,
+        "correctness": 0.5904871399357636
+      },
+      "radon": {
+        "f1": 0.688721586834792,
+        "apls": 0.4112801893681894,
+        "completeness": 0.3763693670524512,
+        "correctness": 0.5551041745841669
+      },
+      "p4unet": {
+        "f1": 0.997204613615061,
+        "apls": 0.9361729641758085,
+        "completeness": 0.929161108120222,
+        "correctness": 0.9525761133544813
+      }
+    }
+  },
+  "F_new_tracks_in_dunes": {
+    "params": {
+      "naive": {
+        "threshold": 2.0
+      },
+      "hough": {
+        "percentile": 99.0,
+        "threshold": 5,
+        "line_length": 5,
+        "line_gap": 6
+      },
+      "radon": {
+        "window": 8,
+        "threshold": 6.0
+      },
+      "p4unet": {
+        "threshold": 0.25
+      }
+    },
+    "naive difference": {
+      "pixel_f1_on_new_tracks": 0.6942455909125315,
+      "false_alert_tiles": 0.375,
+      "tile_auc": 0.999375,
+      "pd_at_pfa_5pct": 1.0,
+      "seconds_per_tile": 0.0007753928874997485
+    },
+    "hough": {
+      "pixel_f1_on_new_tracks": 0.7409882726094524,
+      "false_alert_tiles": 0.975,
+      "tile_auc": 0.914375,
+      "pd_at_pfa_5pct": 0.725,
+      "seconds_per_tile": 0.0012058763250003325
+    },
+    "radon": {
+      "pixel_f1_on_new_tracks": 0.7275780848009257,
+      "false_alert_tiles": 0.325,
+      "tile_auc": 0.983125,
+      "pd_at_pfa_5pct": 0.95,
+      "seconds_per_tile": 1.8800791284999996
+    },
+    "p4unet": {
+      "pixel_f1_on_new_tracks": 0.9891966076442399,
+      "false_alert_tiles": 0.075,
+      "tile_auc": 0.999375,
+      "pd_at_pfa_5pct": 1.0,
+      "seconds_per_tile": 0.07617983946249965
+    }
+  }
+}

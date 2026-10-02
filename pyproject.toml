@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eqroads"
+version = "0.1.0"
+description = "Rotation-equivariant road extraction and message-passing topology repair on Sentinel-2 imagery"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Antoine Damon" }]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "scikit-image>=0.24",
+    "networkx>=3.0",
+    "torch>=2.2",
+    "torch_geometric>=2.5",
+    "pyproj>=3.6",
+    "rasterio>=1.3",
+    "shapely>=2.0",
+]
+
+[project.optional-dependencies]
+real = ["pystac-client>=0.7", "planetary-computer>=1.0", "osmnx>=2.0", "geopandas>=0.14"]
+viz = ["matplotlib>=3.7"]
+dev = ["pytest>=7", "ruff>=0.4"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120

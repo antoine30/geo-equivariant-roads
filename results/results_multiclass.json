@@ -1,0 +1,28 @@
+{
+  "unet": {
+    "parameters": 488883,
+    "east_west": {
+      "road_relaxed_f1": 0.994347794591649,
+      "built_up_iou": 0.8590879619623947,
+      "built_up_f1": 0.9242036735642873
+    },
+    "north_south": {
+      "road_relaxed_f1": 0.003927450610056394,
+      "built_up_iou": 0.5314256688113782,
+      "built_up_f1": 0.694027375450545
+    }
+  },
+  "p4unet": {
+    "parameters": 487515,
+    "east_west": {
+      "road_relaxed_f1": 0.9952526955105814,
+      "built_up_iou": 0.89952522910456,
+      "built_up_f1": 0.947105324343176
+    },
+    "north_south": {
+      "road_relaxed_f1": 0.9952526955105814,
+      "built_up_iou": 0.89952522910456,
+      "built_up_f1": 0.947105324343176
+    }
+  }
+}

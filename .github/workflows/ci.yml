@@ -1,0 +1,26 @@
+name: tests
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install (CPU-only PyTorch)
+        run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -e ".[dev,viz]"
+      - name: Lint
+        run: ruff check src tests scripts
+      - name: Unit tests (equivariance, invariance, graph, metrics, exports)
+        run: pytest -q
+      - name: End-to-end smoke run
+        run: python scripts/run_experiment.py --quick
+      - name: Multi-class smoke run (roads + built-up)
+        run: python scripts/run_multiclass.py --quick
+      - name: Hough baseline (classical comparison)
+        run: python scripts/run_hough.py
+      - name: Sinuous roads and new tracks in dunes (smoke run)
+        run: python scripts/run_tracks.py --quick
